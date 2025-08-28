@@ -75,32 +75,12 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 6px;
+      gap: 8px;
     }
     .crop-preview {
       border-radius: 8px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       max-width: 150px;
-    }
-    .download-icon {
-      background: #3b82f6;
-      border: none;
-      border-radius: 50%;
-      width: 36px;
-      height: 36px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      transition: background 0.2s ease;
-    }
-    .download-icon:hover {
-      background: #2563eb;
-    }
-    .download-icon svg {
-      width: 18px;
-      height: 18px;
-      fill: white;
     }
     .ad-placeholder {
       margin: 20px auto;
@@ -263,11 +243,7 @@
         wrapper.appendChild(cropCanvas);
 
         const downloadBtn = document.createElement('button');
-        downloadBtn.className = 'download-icon';
-        downloadBtn.innerHTML = `
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <path d="M12 16l4-5h-3V4h-2v7H8z"/><path d="M20 18H4v2h16v-2z"/>
-          </svg>`;
+        downloadBtn.textContent = 'Download';
         downloadBtn.onclick = () => {
           const link = document.createElement('a');
           link.download = `crop_${i+1}.png`;
